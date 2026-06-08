@@ -1,0 +1,24 @@
+agent:
+  ros__parameters:
+    cmd_vel_topic: /cmd_vel
+    camera_topic: /camera/color/image_raw
+    depth_topic: /camera/depth/image_raw
+    odom_frame: odom
+    base_frame: base_link
+    map_frame: map
+    nav2_action_name: navigate_to_pose
+    max_linear_speed: 0.25
+    max_strafe_speed: 0.20
+    max_angular_speed: 0.8
+    dry_run: true
+    llm_provider: gemini   # gemini | ollama | mock
+    gemini_model: gemini-1.5-flash
+    ollama_model: qwen2.5:7b
+    ollama_url: http://localhost:11434/api/generate
+    world_file: /tmp/jetrover_world.json
+    # Replace with real arm command topics/services after checking `ros2 topic list`.
+    arm_command_topic: /jetrover_agent/arm_command
+    gripper_command_topic: /jetrover_agent/gripper_command
+    button_press_depth_m: 0.035
+    place_height_m: 0.05
+    semantic_match_threshold: 0.55
